@@ -35,7 +35,7 @@ class RedisSessionManager(SessionManager):
             port (int): Port number of the Redis server.
             db (int): Database number in Redis.
         """
-        self.client = redis.from_url(*args)
+        self.client = kwargs.get('client')
         self.prefix = prefix
         self.frozen = "frozen:" + prefix
 
